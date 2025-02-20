@@ -1,8 +1,37 @@
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-<script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+<html lang="en">
 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/babel-standalone@6/babel.js"></script>
+<script type="module">
+
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 	createChat({
-		webhookUrl: 'https://ymcheung.app.n8n.cloud/webhook/fd8181a8-df78-4e69-bde9-b831c6975bc3'
+		webhookUrl: 'https://ymcheung.app.n8n.cloud/webhook/fd8181a8-df78-4e69-bde9-b831c6975bc3',
+	webhookConfig: {
+		method: 'POST',
+		headers: { }
+	},
+	target: '#n8n-chat',
+	mode: 'fullscreen',
+	defaultLanguage: 'en',
+	initialMessages: [
+		'Hi there! 👋',
+		'I am happy to introduce to you Mike Cheung\'s job history, technical background and future plan to you for you to providing him new oppotunities.'
+	]
 	});
+
 </script>
+
+  </body>
+
+</html>
